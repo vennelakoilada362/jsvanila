@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" 
+     href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.css">
+    <title>My Contacts</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="center-align">
+      My Contacts
+    </h1>
+    <input type="text" id="filterInput" placeholder="Search Names ...">
+    <ul id="names" class="collection with-header">
+      <li class="collection-header">
+        <h5>A</h5>
+      </li>
+      <li class="collection-item">
+        <a href="#">Avinash</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Asha</a>
+      </li>
+       <li class="collection-item">
+        <a href="#">Abhi</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Anna</a>
+      </li>
+
+        <ul id="names" class="collection with-header">
+      <li class="collection-header">
+        <h5>B</h5>
+      </li>
+      <li class="collection-item">
+        <a href="#">Bhargavi</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Bhessma</a>
+      </li>
+       <li class="collection-item">
+        <a href="#">Bhanu</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Bhargav</a>
+      </li>
+     
+     <ul id="names" class="collection with-header">
+      <li class="collection-header">
+        <h5>C</h5>
+      </li>
+      <li class="collection-item">
+        <a href="#">Charmila</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Chinnu</a>
+      </li>
+       <li class="collection-item">
+        <a href="#">Chiru</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Chandini</a>
+      </li>
+       <li class="collection-item">
+        <a href="#">Chandu</a>
+      </li>
+
+    </ul>
+  </div>
+
+  <script>
+    let filterInput = document.getElementById('filterInput');
+    filterInput.addEventListener('keyup' , filterNames);
+
+   function filterNames(){
+    let filterValue = document.getElementById('filterInput').value.toUpperCase();
+
+  let ul = document.getElementById('names');
+
+   let li = ul.querySelectorAll('li.collection-item');
+
+   for(let i = 0;i < li.length;i++){
+    let a = li[i].getElementsByTagName('a')[0];
+    if(a.innerHTML.toUpperCase().indexOf(filterValue)>-1){
+     li[i].style.display ='';
+   }else{
+    li[i].style.display ='none';
+   }
+   }
+ }
+  </script>
+  </body>
+  </html>
